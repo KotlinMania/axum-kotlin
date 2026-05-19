@@ -148,7 +148,7 @@ kotlin {
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
-                implementation("io.github.kotlinmania:anyhow-kotlin:0.1.0")
+                implementation("io.github.kotlinmania:anyhow-kotlin:0.1.1")
                 implementation("io.github.kotlinmania:time-kotlin:0.1.0")
                 implementation("io.github.kotlinmania:tokio-stream-kotlin:0.1.0")
                 implementation("io.github.kotlinmania:tracing-subscriber-kotlin:0.1.0")
