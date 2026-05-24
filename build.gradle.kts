@@ -139,28 +139,28 @@ kotlin {
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0")
                 implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.8.0")
                 implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.4.0")
-                implementation("io.github.kotlinmania:base64-kotlin:0.1.0")
+                implementation("io.github.kotlinmania:base64-kotlin:0.1.1")
                 implementation("io.github.kotlinmania:bytes-kotlin:0.2.0")
-                implementation("io.github.kotlinmania:http-kotlin:0.1.0")
-                implementation("io.github.kotlinmania:mime-kotlin:0.1.0")
-                implementation("io.github.kotlinmania:reqwest-kotlin:0.1.0-SNAPSHOT")
+                implementation("io.github.kotlinmania:http-kotlin:0.1.1")
+                implementation("io.github.kotlinmania:mime-kotlin:0.1.1")
+                implementation("io.github.kotlinmania:reqwest-kotlin:0.1.1-SNAPSHOT")
                 implementation("io.github.kotlinmania:serde-kotlin:0.1.1")
-                implementation("io.github.kotlinmania:serde-json-kotlin:0.1.0")
-                implementation("io.github.kotlinmania:serde-path-to-error-kotlin:0.1.0")
-                implementation("io.github.kotlinmania:sha1-kotlin:0.1.0")
-                implementation("io.github.kotlinmania:tokio-kotlin:0.1.0")
-                implementation("io.github.kotlinmania:tokio-tungstenite-kotlin:0.1.0")
-                implementation("io.github.kotlinmania:tracing-kotlin:0.1.0")
+                implementation("io.github.kotlinmania:serde-json-kotlin:0.1.1")
+                implementation("io.github.kotlinmania:serde-path-to-error-kotlin:0.1.1")
+                implementation("io.github.kotlinmania:sha1-kotlin:0.1.1")
+                implementation("io.github.kotlinmania:tokio-kotlin:0.1.1")
+                implementation("io.github.kotlinmania:tokio-tungstenite-kotlin:0.1.1")
+                implementation("io.github.kotlinmania:tracing-kotlin:0.1.1")
             }
         }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
-                implementation("io.github.kotlinmania:anyhow-kotlin:0.1.0")
-                implementation("io.github.kotlinmania:time-kotlin:0.1.0")
-                implementation("io.github.kotlinmania:tokio-stream-kotlin:0.1.0")
-                implementation("io.github.kotlinmania:tracing-subscriber-kotlin:0.1.0")
-                implementation("io.github.kotlinmania:uuid-kotlin:0.1.0")
+                implementation("io.github.kotlinmania:anyhow-kotlin:0.1.1")
+                implementation("io.github.kotlinmania:time-kotlin:0.1.1")
+                implementation("io.github.kotlinmania:tokio-stream-kotlin:0.1.1")
+                implementation("io.github.kotlinmania:tracing-subscriber-kotlin:0.1.1")
+                implementation("io.github.kotlinmania:uuid-kotlin:0.1.1")
             }
         }
 
