@@ -1,5 +1,4 @@
 {
-  "parity_mode": false,
   "name": "axum-kotlin",
   "source": {
     "path": "tmp/axum/src",
