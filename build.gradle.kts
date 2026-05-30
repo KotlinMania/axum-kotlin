@@ -141,10 +141,10 @@ kotlin {
                 implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.4.0")
                 implementation("io.github.kotlinmania:base64-kotlin:0.1.0")
                 implementation("io.github.kotlinmania:bytes-kotlin:0.2.1")
-                implementation("io.github.kotlinmania:http-kotlin:0.1.1")
+                implementation("io.github.kotlinmania:http-kotlin:0.1.3")
                 // implementation("io.github.kotlinmania:mime-kotlin:0.1.1") // Not published
                 // implementation("io.github.kotlinmania:reqwest-kotlin:0.1.1-SNAPSHOT") // Not published
-                implementation("io.github.kotlinmania:serde-kotlin:0.1.1")
+                implementation("io.github.kotlinmania:serde-kotlin:0.1.3")
                 // implementation("io.github.kotlinmania:serde-json-kotlin:0.1.1") // Not published
                 // implementation("io.github.kotlinmania:serde-path-to-error-kotlin:0.1.1") // Not published
                 // implementation("io.github.kotlinmania:sha1-kotlin:0.1.1") // Not published
@@ -156,7 +156,7 @@ kotlin {
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
-                implementation("io.github.kotlinmania:anyhow-kotlin:0.1.1")
+                implementation("io.github.kotlinmania:anyhow-kotlin:0.1.3")
                 // implementation("io.github.kotlinmania:time-kotlin:0.1.1") // Not published
                 // implementation("io.github.kotlinmania:tokio-stream-kotlin:0.1.1") // Not published
                 // implementation("io.github.kotlinmania:tracing-subscriber-kotlin:0.1.1") // Not published
