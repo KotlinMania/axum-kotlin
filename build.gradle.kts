@@ -138,7 +138,7 @@ kotlin {
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.11.0")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0")
                 implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.8.0")
-                implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.4.0")
+                implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.5.0")
                 implementation("io.github.kotlinmania:base64-kotlin:0.1.0")
                 implementation("io.github.kotlinmania:bytes-kotlin:0.2.1")
                 implementation("io.github.kotlinmania:http-kotlin:0.1.3")
