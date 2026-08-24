@@ -4,10 +4,10 @@ Based on AST analysis, here are the concrete next steps.
 
 ## Summary
 
-- **Files Present:** 6/58 (10.3%)
-- **Function parity:** 20/666 matched (target 66) — 3.0%
-- **Class/type parity:** 10/209 matched (target 18) — 4.8%
-- **Combined symbol parity:** 30/875 matched (target 84) — 3.4%
+- **Files Present:** 6/60 (10.0%)
+- **Function parity:** 20/674 matched (target 66) — 3.0%
+- **Class/type parity:** 10/212 matched (target 18) — 4.7%
+- **Combined symbol parity:** 30/886 matched (target 84) — 3.4%
 - **Average inline-code cosine:** 0.18 (function body across 6 matched files)
 - **Average documentation cosine:** 0.41 (doc text across 6 matched files)
 - **Cheat-zeroed Files:** 1
@@ -22,7 +22,7 @@ No incomplete high-dependency files detected.
 Critical missing files (>10 dependencies):
 
 1. **handler.service** (23 deps)
-   - Path: `handler/service.rs`
+   - Path: `src/handler/service.rs`
    - Essential for 23 other files
 
 ## Detailed Work Items
@@ -31,7 +31,7 @@ Every matched file is listed below with function and type symbol parity.
 
 ### 1. extension
 
-- **Target:** `axum.Extension [ZERO]`
+- **Target:** `axum.Extension [ZERO] [PROVENANCE-FALLBACK]`
 - **Similarity:** 0.00
 - **Dependents:** 3
 - **Priority Score:** 3192110.0
@@ -40,10 +40,13 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 2/9 matched (target 2)
 - **Missing types:** `Rejection`, `Error`, `Service`, `Response`, `Future`, `Foo`, `Bar`
 - **Tests:** 0/5 matched
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `extension.rs` vs expected `extension.rs`
+- **Proposed provenance header:** `// port-lint: source extension.rs` (current: `// port-lint: source extension.rs`)
+- **Lint issues:** 1
 
 ### 2. response.sse
 
-- **Target:** `response.Sse`
+- **Target:** `response.Sse [PROVENANCE-FALLBACK]`
 - **Similarity:** 0.10
 - **Dependents:** 1
 - **Priority Score:** 1364609.0
@@ -52,10 +55,15 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 3/10 matched (target 4)
 - **Missing types:** `Data`, `Error`, `Buffer`, `EventDataWriter`, `JsonWriter`, `EventFlags`, `Item`
 - **Tests:** 0/6 matched
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `response/sse.rs` vs expected `response/sse.rs`
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `tests:response/sse.rs` vs expected `response/sse.rs`
+- **Proposed provenance header:** `// port-lint: source response/sse.rs` (current: `// port-lint: source response/sse.rs`)
+- **Proposed provenance header:** `// port-lint: tests response/sse.rs` (current: `// port-lint: tests response/sse.rs`)
+- **Lint issues:** 2
 
 ### 3. response.redirect
 
-- **Target:** `response.Redirect`
+- **Target:** `response.Redirect [PROVENANCE-FALLBACK]`
 - **Similarity:** 0.47
 - **Dependents:** 1
 - **Priority Score:** 1041105.3
@@ -64,10 +72,15 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 1/1 matched (target 2)
 - **Missing types:** _none_
 - **Tests:** 2/3 matched
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `response/redirect.rs` vs expected `response/redirect.rs`
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `tests:response/redirect.rs` vs expected `response/redirect.rs`
+- **Proposed provenance header:** `// port-lint: source response/redirect.rs` (current: `// port-lint: source response/redirect.rs`)
+- **Proposed provenance header:** `// port-lint: tests response/redirect.rs` (current: `// port-lint: tests response/redirect.rs`)
+- **Lint issues:** 2
 
 ### 4. routing.strip_prefix
 
-- **Target:** `routing.StripPrefix`
+- **Target:** `routing.StripPrefix [PROVENANCE-FALLBACK]`
 - **Similarity:** 0.12
 - **Dependents:** 0
 - **Priority Score:** 151808.8
@@ -76,10 +89,15 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 1/7 matched (target 2)
 - **Missing types:** `Response`, `Error`, `Future`, `Item`, `UriAndPrefix`, `AsciiAlphanumeric`
 - **Tests:** 0/4 matched
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `routing/strip_prefix.rs` vs expected `routing/strip_prefix.rs`
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `tests:routing/strip_prefix.rs` vs expected `routing/strip_prefix.rs`
+- **Proposed provenance header:** `// port-lint: source routing/strip_prefix.rs` (current: `// port-lint: source routing/strip_prefix.rs`)
+- **Proposed provenance header:** `// port-lint: tests routing/strip_prefix.rs` (current: `// port-lint: tests routing/strip_prefix.rs`)
+- **Lint issues:** 2
 
 ### 5. util
 
-- **Target:** `axum.Util`
+- **Target:** `axum.Util [PROVENANCE-FALLBACK]`
 - **Similarity:** 0.03
 - **Dependents:** 0
 - **Priority Score:** 131509.7
@@ -88,10 +106,15 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 1/7 matched (target 5)
 - **Missing types:** `Target`, `MapIntoResponse`, `Response`, `Error`, `Future`, `Output`
 - **Tests:** 0/1 matched
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `util.rs` vs expected `util.rs`
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `tests:util.rs` vs expected `util.rs`
+- **Proposed provenance header:** `// port-lint: source util.rs` (current: `// port-lint: source util.rs`)
+- **Proposed provenance header:** `// port-lint: tests util.rs` (current: `// port-lint: tests util.rs`)
+- **Lint issues:** 2
 
 ### 6. routing.method_filter
 
-- **Target:** `routing.MethodFilter`
+- **Target:** `routing.MethodFilter [PROVENANCE-FALLBACK]`
 - **Similarity:** 0.35
 - **Dependents:** 0
 - **Priority Score:** 51106.5
@@ -100,6 +123,11 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 2/3 matched
 - **Missing types:** `Error`
 - **Tests:** 1/1 matched
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `routing/method_filter.rs` vs expected `routing/method_filter.rs`
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `tests:routing/method_filter.rs` vs expected `routing/method_filter.rs`
+- **Proposed provenance header:** `// port-lint: source routing/method_filter.rs` (current: `// port-lint: source routing/method_filter.rs`)
+- **Proposed provenance header:** `// port-lint: tests routing/method_filter.rs` (current: `// port-lint: tests routing/method_filter.rs`)
+- **Lint issues:** 2
 
 ## Success Criteria
 
@@ -121,16 +149,16 @@ do not treat them as the next implementation target by default.
 
 | Source | Expected target | Deps | Source path | Expected path |
 |--------|-----------------|------|-------------|---------------|
-| `body.mod` | `body.Mod` | 0 | `body/mod.rs` | `body/Mod.kt` |
-| `error_handling.mod` | `errorhandling.Mod` | 0 | `error_handling/mod.rs` | `errorhandling/Mod.kt` |
-| `extract.mod` | `extract.Mod` | 0 | `extract/mod.rs` | `extract/Mod.kt` |
-| `path.mod` | `extract.path.Mod` | 0 | `extract/path/mod.rs` | `extract/path/Mod.kt` |
-| `handler.mod` | `handler.Mod` | 0 | `handler/mod.rs` | `handler/Mod.kt` |
-| `lib` | `Lib` | 0 | `lib.rs` | `Lib.kt` |
-| `middleware.mod` | `middleware.Mod` | 0 | `middleware/mod.rs` | `middleware/Mod.kt` |
-| `response.mod` | `response.Mod` | 0 | `response/mod.rs` | `response/Mod.kt` |
-| `routing.mod` | `routing.Mod` | 0 | `routing/mod.rs` | `routing/Mod.kt` |
-| `tests.mod` | `routing.tests.Mod` | 0 | `routing/tests/mod.rs` | `routing/tests/Mod.kt` |
-| `serve.mod` | `serve.Mod` | 0 | `serve/mod.rs` | `serve/Mod.kt` |
-| `test_helpers.mod` | `testhelpers.Mod` | 0 | `test_helpers/mod.rs` | `testhelpers/Mod.kt` |
+| `body.mod` | `body.Mod` | 0 | `src/body/mod.rs` | `body/Mod.kt` |
+| `error_handling.mod` | `errorhandling.Mod` | 0 | `src/error_handling/mod.rs` | `errorhandling/Mod.kt` |
+| `extract.mod` | `extract.Mod` | 0 | `src/extract/mod.rs` | `extract/Mod.kt` |
+| `path.mod` | `extract.path.Mod` | 0 | `src/extract/path/mod.rs` | `extract/path/Mod.kt` |
+| `handler.mod` | `handler.Mod` | 0 | `src/handler/mod.rs` | `handler/Mod.kt` |
+| `lib` | `Lib` | 0 | `src/lib.rs` | `Lib.kt` |
+| `middleware.mod` | `middleware.Mod` | 0 | `src/middleware/mod.rs` | `middleware/Mod.kt` |
+| `response.mod` | `response.Mod` | 0 | `src/response/mod.rs` | `response/Mod.kt` |
+| `routing.mod` | `routing.Mod` | 0 | `src/routing/mod.rs` | `routing/Mod.kt` |
+| `tests.mod` | `routing.tests.Mod` | 0 | `src/routing/tests/mod.rs` | `routing/tests/Mod.kt` |
+| `serve.mod` | `serve.Mod` | 0 | `src/serve/mod.rs` | `serve/Mod.kt` |
+| `test_helpers.mod` | `testhelpers.Mod` | 0 | `src/test_helpers/mod.rs` | `testhelpers/Mod.kt` |
 
