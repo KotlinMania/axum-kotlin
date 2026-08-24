@@ -924,12 +924,18 @@ tasks.register("swiftExportSmokeTest") {
 
     doLast {
         val execOperations = serviceOf<ExecOperations>()
-        val swiftBuildDir =
+        val swiftBuildDirFile =
             layout.buildDirectory
                 .dir("swift-test")
                 .get()
                 .asFile
-                .absolutePath
+        swiftBuildDirFile.deleteRecursively()
+        val swiftBuildDir = swiftBuildDirFile.absolutePath
+        layout.buildDirectory
+            .dir("SPMBuild")
+            .get()
+            .asFile
+            .deleteRecursively()
         execOperations
             .exec {
                 workingDir = projectDir
@@ -971,6 +977,18 @@ tasks.register("swiftExportSmokeTest") {
             }
         }
 
+        val spmPackageDir =
+            layout.buildDirectory
+                .dir("SPMPackage/macosArm64/Debug")
+                .get()
+                .asFile
+        if (spmPackageDir.exists()) {
+            val epoch = 1700000000000L
+            spmPackageDir.walkTopDown().forEach { file ->
+                file.setLastModified(epoch)
+            }
+        }
+
         execOperations
             .exec {
                 workingDir = layout.projectDirectory.dir("swift-test-harness").asFile
@@ -980,7 +998,7 @@ tasks.register("swiftExportSmokeTest") {
         execOperations
             .exec {
                 workingDir = layout.projectDirectory.dir("swift-test-harness").asFile
-                commandLine("swift", "test")
+                commandLine("swift", "test", "-j", "1")
             }.assertNormalExitValue()
     }
 }
