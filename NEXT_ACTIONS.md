@@ -4,14 +4,14 @@ Based on AST analysis, here are the concrete next steps.
 
 ## Summary
 
-- **Files Present:** 6/58 (10.3%)
-- **Function parity:** 20/666 matched (target 68) — 3.0%
-- **Class/type parity:** 10/209 matched (target 19) — 4.8%
-- **Combined symbol parity:** 30/875 matched (target 87) — 3.4%
-- **Average inline-code cosine:** 0.18 (function body across 6 matched files)
-- **Average documentation cosine:** 0.41 (doc text across 6 matched files)
+- **Files Present:** 7/58 (12.1%)
+- **Function parity:** 20/665 matched (target 76) — 3.0%
+- **Class/type parity:** 12/209 matched (target 24) — 5.7%
+- **Combined symbol parity:** 32/874 matched (target 100) — 3.7%
+- **Average inline-code cosine:** 0.15 (function body across 7 matched files)
+- **Average documentation cosine:** 0.41 (doc text across 7 matched files)
 - **Cheat-zeroed Files:** 0
-- **Critical Issues:** 6 files with <0.60 function similarity
+- **Critical Issues:** 7 files with <0.60 function similarity
 
 ## Priority 1: Fix Incomplete High-Dependency Files
 
@@ -29,7 +29,19 @@ Critical missing files (>10 dependencies):
 
 Every matched file is listed below with function and type symbol parity.
 
-### 1. extension
+### 1. json
+
+- **Target:** `axum.Json`
+- **Similarity:** 0.00
+- **Dependents:** 4
+- **Priority Score:** 4171910.0
+- **Functions:** 0/14 matched (target 8)
+- **Missing functions:** `from_request`, `json_content_type`, `from`, `from_bytes`, `make_rejection`, `into_response`, `make_response`, `deserialize_body`, `consume_body_to_json_requires_json_content_type`, `json_content_types`, `valid_json_content_type`, `invalid_json_syntax`, `extra_chars_after_valid_json_syntax`, `invalid_json_data`
+- **Types:** 2/5 matched
+- **Missing types:** `Rejection`, `Foo`, `Bar`
+- **Tests:** 0/7 matched
+
+### 2. extension
 
 - **Target:** `axum.Extension`
 - **Similarity:** 0.00
@@ -41,7 +53,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Missing types:** `Rejection`, `Error`, `Service`, `Response`, `Future`, `Foo`, `Bar`
 - **Tests:** 0/5 matched
 
-### 2. response.sse
+### 3. response.sse
 
 - **Target:** `response.Sse`
 - **Similarity:** 0.10
@@ -53,7 +65,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Missing types:** `Data`, `Error`, `Buffer`, `EventDataWriter`, `JsonWriter`, `EventFlags`, `Item`
 - **Tests:** 0/6 matched
 
-### 3. response.redirect
+### 4. response.redirect
 
 - **Target:** `response.Redirect`
 - **Similarity:** 0.47
@@ -65,7 +77,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Missing types:** _none_
 - **Tests:** 2/3 matched
 
-### 4. routing.strip_prefix
+### 5. routing.strip_prefix
 
 - **Target:** `routing.StripPrefix`
 - **Similarity:** 0.12
@@ -77,7 +89,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Missing types:** `Response`, `Error`, `Future`, `Item`, `UriAndPrefix`, `AsciiAlphanumeric`
 - **Tests:** 0/4 matched
 
-### 5. util
+### 6. util
 
 - **Target:** `axum.Util`
 - **Similarity:** 0.03
@@ -89,7 +101,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Missing types:** `Target`, `MapIntoResponse`, `Response`, `Error`, `Future`, `Output`
 - **Tests:** 0/1 matched
 
-### 6. routing.method_filter
+### 7. routing.method_filter
 
 - **Target:** `routing.MethodFilter`
 - **Similarity:** 0.35
