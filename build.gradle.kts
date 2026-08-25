@@ -929,12 +929,13 @@ tasks.register("swiftExportSmokeTest") {
                 .get()
                 .asFile
         swiftBuildDirFile.deleteRecursively()
+        swiftBuildDirFile.mkdirs()
         val swiftBuildDir = swiftBuildDirFile.absolutePath
         layout.buildDirectory
-            .dir("SPMBuild")
+            .dir("bin/macosArm64/SwiftExportBinaryDebugStatic")
             .get()
             .asFile
-            .deleteRecursively()
+            .mkdirs()
         execOperations
             .exec {
                 workingDir = projectDir
