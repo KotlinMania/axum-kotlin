@@ -4,10 +4,10 @@ Based on AST analysis, here are the concrete next steps.
 
 ## Summary
 
-- **Files Present:** 7/60 (11.7%)
-- **Function parity:** 20/917 matched (target 76) — 2.2%
-- **Class/type parity:** 12/270 matched (target 24) — 4.4%
-- **Combined symbol parity:** 32/1187 matched (target 100) — 2.7%
+- **Files Present:** 7/58 (12.1%)
+- **Function parity:** 20/909 matched (target 76) — 2.2%
+- **Class/type parity:** 12/267 matched (target 24) — 4.5%
+- **Combined symbol parity:** 32/1176 matched (target 100) — 2.7%
 - **Average inline-code cosine:** 0.15 (function body across 7 matched files)
 - **Average documentation cosine:** 0.41 (doc text across 7 matched files)
 - **Cheat-zeroed Files:** 0
@@ -22,14 +22,14 @@ No incomplete high-dependency files detected.
 Critical missing files (>10 dependencies):
 
 1. **handler.service** (23 deps)
-   - Path: `axum/src/handler/service.rs`
+   - Path: `handler/service.rs`
    - Essential for 23 other files
 
 ## Detailed Work Items
 
 Every matched file is listed below with function and type symbol parity.
 
-### 1. axum.json
+### 1. json
 
 - **Target:** `axum.Json`
 - **Similarity:** 0.00
@@ -41,7 +41,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Missing types:** `Rejection`, `Foo`, `Bar`
 - **Tests:** 0/7 matched
 
-### 2. axum.extension
+### 2. extension
 
 - **Target:** `axum.Extension`
 - **Similarity:** 0.00
@@ -89,7 +89,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Missing types:** `Response`, `Error`, `Future`, `Item`, `UriAndPrefix`, `AsciiAlphanumeric`
 - **Tests:** 0/4 matched
 
-### 6. axum.util
+### 6. util
 
 - **Target:** `axum.Util`
 - **Similarity:** 0.03
