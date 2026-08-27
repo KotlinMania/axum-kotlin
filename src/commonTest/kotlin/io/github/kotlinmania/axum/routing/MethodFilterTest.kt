@@ -1,4 +1,4 @@
-// port-lint: tests routing/method_filter.rs
+// port-lint: tests axum/src/routing/method_filter.rs
 package io.github.kotlinmania.axum.routing
 
 import kotlin.test.Test

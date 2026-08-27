@@ -1,4 +1,4 @@
-// port-lint: source routing/strip_prefix.rs
+// port-lint: source axum/src/routing/strip_prefix.rs
 package io.github.kotlinmania.axum.routing
 
 /**
