@@ -1,4 +1,4 @@
-// port-lint: source axum/src/json.rs
+// port-lint: source json.rs
 package io.github.kotlinmania.axum
 
 import kotlinx.serialization.KSerializer
