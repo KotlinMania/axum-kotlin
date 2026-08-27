@@ -39,7 +39,12 @@ data class Json<T>(
          */
         fun isJsonContentType(contentType: String?): Boolean {
             if (contentType == null) return false
-            val normalized = contentType.split(";").first().trim().lowercase()
+            val normalized =
+                contentType
+                    .split(";")
+                    .first()
+                    .trim()
+                    .lowercase()
             return normalized == "application/json" || normalized.endsWith("+json")
         }
     }
