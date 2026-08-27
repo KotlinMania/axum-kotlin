@@ -4,10 +4,10 @@ Based on AST analysis, here are the concrete next steps.
 
 ## Summary
 
-- **Files Present:** 7/58 (12.1%)
-- **Function parity:** 20/665 matched (target 76) — 3.0%
-- **Class/type parity:** 12/209 matched (target 24) — 5.7%
-- **Combined symbol parity:** 32/874 matched (target 100) — 3.7%
+- **Files Present:** 7/60 (11.7%)
+- **Function parity:** 20/917 matched (target 76) — 2.2%
+- **Class/type parity:** 12/270 matched (target 24) — 4.4%
+- **Combined symbol parity:** 32/1187 matched (target 100) — 2.7%
 - **Average inline-code cosine:** 0.15 (function body across 7 matched files)
 - **Average documentation cosine:** 0.41 (doc text across 7 matched files)
 - **Cheat-zeroed Files:** 0
@@ -22,14 +22,14 @@ No incomplete high-dependency files detected.
 Critical missing files (>10 dependencies):
 
 1. **handler.service** (23 deps)
-   - Path: `handler/service.rs`
+   - Path: `axum/src/handler/service.rs`
    - Essential for 23 other files
 
 ## Detailed Work Items
 
 Every matched file is listed below with function and type symbol parity.
 
-### 1. json
+### 1. axum.json
 
 - **Target:** `axum.Json`
 - **Similarity:** 0.00
@@ -41,7 +41,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Missing types:** `Rejection`, `Foo`, `Bar`
 - **Tests:** 0/7 matched
 
-### 2. extension
+### 2. axum.extension
 
 - **Target:** `axum.Extension`
 - **Similarity:** 0.00
@@ -89,7 +89,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Missing types:** `Response`, `Error`, `Future`, `Item`, `UriAndPrefix`, `AsciiAlphanumeric`
 - **Tests:** 0/4 matched
 
-### 6. util
+### 6. axum.util
 
 - **Target:** `axum.Util`
 - **Similarity:** 0.03
@@ -121,28 +121,4 @@ For each file to be considered "complete":
 - All tests ported
 - Documentation ported
 - port-lint header present
-
-## Reexport / Wiring Modules
-
-These files match `reexport_modules` patterns in `.ast_distance_config.json`. They are filtered out of
-normal priority and missing-file ladders because they are wiring
-modules, not direct logic ports. Consult them for call-site routing;
-do not treat them as the next implementation target by default.
-
-### Missing
-
-| Source | Expected target | Deps | Source path | Expected path |
-|--------|-----------------|------|-------------|---------------|
-| `body.mod` | `body.Mod` | 0 | `body/mod.rs` | `body/Mod.kt` |
-| `error_handling.mod` | `errorhandling.Mod` | 0 | `error_handling/mod.rs` | `errorhandling/Mod.kt` |
-| `extract.mod` | `extract.Mod` | 0 | `extract/mod.rs` | `extract/Mod.kt` |
-| `path.mod` | `extract.path.Mod` | 0 | `extract/path/mod.rs` | `extract/path/Mod.kt` |
-| `handler.mod` | `handler.Mod` | 0 | `handler/mod.rs` | `handler/Mod.kt` |
-| `lib` | `Lib` | 0 | `lib.rs` | `Lib.kt` |
-| `middleware.mod` | `middleware.Mod` | 0 | `middleware/mod.rs` | `middleware/Mod.kt` |
-| `response.mod` | `response.Mod` | 0 | `response/mod.rs` | `response/Mod.kt` |
-| `routing.mod` | `routing.Mod` | 0 | `routing/mod.rs` | `routing/Mod.kt` |
-| `tests.mod` | `routing.tests.Mod` | 0 | `routing/tests/mod.rs` | `routing/tests/Mod.kt` |
-| `serve.mod` | `serve.Mod` | 0 | `serve/mod.rs` | `serve/Mod.kt` |
-| `test_helpers.mod` | `testhelpers.Mod` | 0 | `test_helpers/mod.rs` | `testhelpers/Mod.kt` |
 

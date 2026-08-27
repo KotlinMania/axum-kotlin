@@ -1,4 +1,4 @@
-// port-lint: tests routing/strip_prefix.rs
+// port-lint: tests axum/src/routing/strip_prefix.rs
 package io.github.kotlinmania.axum.routing
 
 import kotlin.test.Test

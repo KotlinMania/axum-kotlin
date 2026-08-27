@@ -1,4 +1,4 @@
-// port-lint: tests json.rs
+// port-lint: tests axum/src/json.rs
 package io.github.kotlinmania.axum
 
 import kotlinx.serialization.Serializable
