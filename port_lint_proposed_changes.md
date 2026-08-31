@@ -1,9 +1,24 @@
 # port-lint Proposed Changes
 
 **Generated:** 2026-08-31
-**Source:** tmp
+**Source:** tmp/axum/src
 **Target:** src/commonMain/kotlin/io/github/kotlinmania/axum
 
 These are review proposals only. They are emitted when a Rust -> Kotlin pair matches only after fallback normalization, so the existing `port-lint` header is not an exact provenance match.
 
-_No fallback provenance matches detected._
+| Target file | Current header | Proposed header | Source path | Reason |
+|-------------|----------------|-----------------|-------------|--------|
+| `src/commonMain/kotlin/io/github/kotlinmania/axum/Json.kt` | `// port-lint: source axum/src/json.rs` | `// port-lint: source json.rs` | `json.rs` | `port-lint provenance header matched only after fallback normalization: 'axum/src/json.rs' vs expected 'json.rs'` |
+| `src/commonTest/kotlin/io/github/kotlinmania/axum/JsonTest.kt` | `// port-lint: tests axum/src/json.rs` | `// port-lint: tests json.rs` | `json.rs` | `port-lint provenance header matched only after fallback normalization: 'tests:axum/src/json.rs' vs expected 'json.rs'` |
+| `src/commonMain/kotlin/io/github/kotlinmania/axum/Extension.kt` | `// port-lint: source axum/src/extension.rs` | `// port-lint: source extension.rs` | `extension.rs` | `port-lint provenance header matched only after fallback normalization: 'axum/src/extension.rs' vs expected 'extension.rs'` |
+| `src/commonTest/kotlin/io/github/kotlinmania/axum/ExtensionTest.kt` | `// port-lint: tests axum/src/extension.rs` | `// port-lint: tests extension.rs` | `extension.rs` | `port-lint provenance header matched only after fallback normalization: 'tests:axum/src/extension.rs' vs expected 'extension.rs'` |
+| `src/commonMain/kotlin/io/github/kotlinmania/axum/response/Sse.kt` | `// port-lint: source axum/src/response/sse.rs` | `// port-lint: source response/sse.rs` | `response/sse.rs` | `port-lint provenance header matched only after fallback normalization: 'axum/src/response/sse.rs' vs expected 'response/sse.rs'` |
+| `src/commonTest/kotlin/io/github/kotlinmania/axum/response/SseTest.kt` | `// port-lint: tests axum/src/response/sse.rs` | `// port-lint: tests response/sse.rs` | `response/sse.rs` | `port-lint provenance header matched only after fallback normalization: 'tests:axum/src/response/sse.rs' vs expected 'response/sse.rs'` |
+| `src/commonMain/kotlin/io/github/kotlinmania/axum/response/Redirect.kt` | `// port-lint: source axum/src/response/redirect.rs` | `// port-lint: source response/redirect.rs` | `response/redirect.rs` | `port-lint provenance header matched only after fallback normalization: 'axum/src/response/redirect.rs' vs expected 'response/redirect.rs'` |
+| `src/commonTest/kotlin/io/github/kotlinmania/axum/response/RedirectTest.kt` | `// port-lint: tests axum/src/response/redirect.rs` | `// port-lint: tests response/redirect.rs` | `response/redirect.rs` | `port-lint provenance header matched only after fallback normalization: 'tests:axum/src/response/redirect.rs' vs expected 'response/redirect.rs'` |
+| `src/commonMain/kotlin/io/github/kotlinmania/axum/routing/StripPrefix.kt` | `// port-lint: source axum/src/routing/strip_prefix.rs` | `// port-lint: source routing/strip_prefix.rs` | `routing/strip_prefix.rs` | `port-lint provenance header matched only after fallback normalization: 'axum/src/routing/strip_prefix.rs' vs expected 'routing/strip_prefix.rs'` |
+| `src/commonTest/kotlin/io/github/kotlinmania/axum/routing/StripPrefixTest.kt` | `// port-lint: tests axum/src/routing/strip_prefix.rs` | `// port-lint: tests routing/strip_prefix.rs` | `routing/strip_prefix.rs` | `port-lint provenance header matched only after fallback normalization: 'tests:axum/src/routing/strip_prefix.rs' vs expected 'routing/strip_prefix.rs'` |
+| `src/commonMain/kotlin/io/github/kotlinmania/axum/Util.kt` | `// port-lint: source axum/src/util.rs` | `// port-lint: source util.rs` | `util.rs` | `port-lint provenance header matched only after fallback normalization: 'axum/src/util.rs' vs expected 'util.rs'` |
+| `src/commonTest/kotlin/io/github/kotlinmania/axum/UtilTest.kt` | `// port-lint: tests axum/src/util.rs` | `// port-lint: tests util.rs` | `util.rs` | `port-lint provenance header matched only after fallback normalization: 'tests:axum/src/util.rs' vs expected 'util.rs'` |
+| `src/commonMain/kotlin/io/github/kotlinmania/axum/routing/MethodFilter.kt` | `// port-lint: source axum/src/routing/method_filter.rs` | `// port-lint: source routing/method_filter.rs` | `routing/method_filter.rs` | `port-lint provenance header matched only after fallback normalization: 'axum/src/routing/method_filter.rs' vs expected 'routing/method_filter.rs'` |
+| `src/commonTest/kotlin/io/github/kotlinmania/axum/routing/MethodFilterTest.kt` | `// port-lint: tests axum/src/routing/method_filter.rs` | `// port-lint: tests routing/method_filter.rs` | `routing/method_filter.rs` | `port-lint provenance header matched only after fallback normalization: 'tests:axum/src/routing/method_filter.rs' vs expected 'routing/method_filter.rs'` |

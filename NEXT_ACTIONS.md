@@ -4,10 +4,10 @@ Based on AST analysis, here are the concrete next steps.
 
 ## Summary
 
-- **Files Present:** 7/60 (11.7%)
-- **Function parity:** 20/917 matched (target 76) — 2.2%
-- **Class/type parity:** 12/270 matched (target 24) — 4.4%
-- **Combined symbol parity:** 32/1187 matched (target 100) — 2.7%
+- **Files Present:** 7/58 (12.1%)
+- **Function parity:** 20/909 matched (target 76) — 2.2%
+- **Class/type parity:** 12/267 matched (target 24) — 4.5%
+- **Combined symbol parity:** 32/1176 matched (target 100) — 2.7%
 - **Average inline-code cosine:** 0.15 (function body across 7 matched files)
 - **Average documentation cosine:** 0.41 (doc text across 7 matched files)
 - **Cheat-zeroed Files:** 0
@@ -22,16 +22,16 @@ No incomplete high-dependency files detected.
 Critical missing files (>10 dependencies):
 
 1. **handler.service** (23 deps)
-   - Path: `axum/src/handler/service.rs`
+   - Path: `handler/service.rs`
    - Essential for 23 other files
 
 ## Detailed Work Items
 
 Every matched file is listed below with function and type symbol parity.
 
-### 1. axum.json
+### 1. json
 
-- **Target:** `axum.Json`
+- **Target:** `axum.Json [PROVENANCE-FALLBACK]`
 - **Similarity:** 0.00
 - **Dependents:** 4
 - **Priority Score:** 4171910.0
@@ -40,10 +40,15 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 2/5 matched
 - **Missing types:** `Rejection`, `Foo`, `Bar`
 - **Tests:** 0/7 matched
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `axum/src/json.rs` vs expected `json.rs`
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `tests:axum/src/json.rs` vs expected `json.rs`
+- **Proposed provenance header:** `// port-lint: source json.rs` (current: `// port-lint: source axum/src/json.rs`)
+- **Proposed provenance header:** `// port-lint: tests json.rs` (current: `// port-lint: tests axum/src/json.rs`)
+- **Lint issues:** 2
 
-### 2. axum.extension
+### 2. extension
 
-- **Target:** `axum.Extension`
+- **Target:** `axum.Extension [PROVENANCE-FALLBACK]`
 - **Similarity:** 0.00
 - **Dependents:** 3
 - **Priority Score:** 3192110.0
@@ -52,10 +57,15 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 2/9 matched (target 3)
 - **Missing types:** `Rejection`, `Error`, `Service`, `Response`, `Future`, `Foo`, `Bar`
 - **Tests:** 0/5 matched
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `axum/src/extension.rs` vs expected `extension.rs`
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `tests:axum/src/extension.rs` vs expected `extension.rs`
+- **Proposed provenance header:** `// port-lint: source extension.rs` (current: `// port-lint: source axum/src/extension.rs`)
+- **Proposed provenance header:** `// port-lint: tests extension.rs` (current: `// port-lint: tests axum/src/extension.rs`)
+- **Lint issues:** 2
 
 ### 3. response.sse
 
-- **Target:** `response.Sse`
+- **Target:** `response.Sse [PROVENANCE-FALLBACK]`
 - **Similarity:** 0.10
 - **Dependents:** 1
 - **Priority Score:** 1364609.0
@@ -64,10 +74,15 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 3/10 matched (target 4)
 - **Missing types:** `Data`, `Error`, `Buffer`, `EventDataWriter`, `JsonWriter`, `EventFlags`, `Item`
 - **Tests:** 0/6 matched
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `axum/src/response/sse.rs` vs expected `response/sse.rs`
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `tests:axum/src/response/sse.rs` vs expected `response/sse.rs`
+- **Proposed provenance header:** `// port-lint: source response/sse.rs` (current: `// port-lint: source axum/src/response/sse.rs`)
+- **Proposed provenance header:** `// port-lint: tests response/sse.rs` (current: `// port-lint: tests axum/src/response/sse.rs`)
+- **Lint issues:** 2
 
 ### 4. response.redirect
 
-- **Target:** `response.Redirect`
+- **Target:** `response.Redirect [PROVENANCE-FALLBACK]`
 - **Similarity:** 0.47
 - **Dependents:** 1
 - **Priority Score:** 1041105.3
@@ -76,10 +91,15 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 1/1 matched (target 2)
 - **Missing types:** _none_
 - **Tests:** 2/3 matched
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `axum/src/response/redirect.rs` vs expected `response/redirect.rs`
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `tests:axum/src/response/redirect.rs` vs expected `response/redirect.rs`
+- **Proposed provenance header:** `// port-lint: source response/redirect.rs` (current: `// port-lint: source axum/src/response/redirect.rs`)
+- **Proposed provenance header:** `// port-lint: tests response/redirect.rs` (current: `// port-lint: tests axum/src/response/redirect.rs`)
+- **Lint issues:** 2
 
 ### 5. routing.strip_prefix
 
-- **Target:** `routing.StripPrefix`
+- **Target:** `routing.StripPrefix [PROVENANCE-FALLBACK]`
 - **Similarity:** 0.12
 - **Dependents:** 0
 - **Priority Score:** 151808.8
@@ -88,10 +108,15 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 1/7 matched (target 2)
 - **Missing types:** `Response`, `Error`, `Future`, `Item`, `UriAndPrefix`, `AsciiAlphanumeric`
 - **Tests:** 0/4 matched
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `axum/src/routing/strip_prefix.rs` vs expected `routing/strip_prefix.rs`
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `tests:axum/src/routing/strip_prefix.rs` vs expected `routing/strip_prefix.rs`
+- **Proposed provenance header:** `// port-lint: source routing/strip_prefix.rs` (current: `// port-lint: source axum/src/routing/strip_prefix.rs`)
+- **Proposed provenance header:** `// port-lint: tests routing/strip_prefix.rs` (current: `// port-lint: tests axum/src/routing/strip_prefix.rs`)
+- **Lint issues:** 2
 
-### 6. axum.util
+### 6. util
 
-- **Target:** `axum.Util`
+- **Target:** `axum.Util [PROVENANCE-FALLBACK]`
 - **Similarity:** 0.03
 - **Dependents:** 0
 - **Priority Score:** 131509.7
@@ -100,10 +125,15 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 1/7 matched (target 5)
 - **Missing types:** `Target`, `MapIntoResponse`, `Response`, `Error`, `Future`, `Output`
 - **Tests:** 0/1 matched
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `axum/src/util.rs` vs expected `util.rs`
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `tests:axum/src/util.rs` vs expected `util.rs`
+- **Proposed provenance header:** `// port-lint: source util.rs` (current: `// port-lint: source axum/src/util.rs`)
+- **Proposed provenance header:** `// port-lint: tests util.rs` (current: `// port-lint: tests axum/src/util.rs`)
+- **Lint issues:** 2
 
 ### 7. routing.method_filter
 
-- **Target:** `routing.MethodFilter`
+- **Target:** `routing.MethodFilter [PROVENANCE-FALLBACK]`
 - **Similarity:** 0.35
 - **Dependents:** 0
 - **Priority Score:** 51106.5
@@ -112,6 +142,11 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 2/3 matched
 - **Missing types:** `Error`
 - **Tests:** 1/1 matched
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `axum/src/routing/method_filter.rs` vs expected `routing/method_filter.rs`
+- **Provenance warning:** port-lint provenance header matched only after fallback normalization: `tests:axum/src/routing/method_filter.rs` vs expected `routing/method_filter.rs`
+- **Proposed provenance header:** `// port-lint: source routing/method_filter.rs` (current: `// port-lint: source axum/src/routing/method_filter.rs`)
+- **Proposed provenance header:** `// port-lint: tests routing/method_filter.rs` (current: `// port-lint: tests axum/src/routing/method_filter.rs`)
+- **Lint issues:** 2
 
 ## Success Criteria
 
