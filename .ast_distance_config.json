@@ -1,7 +1,7 @@
 {
   "name": "axum-kotlin",
   "source": {
-    "path": "tmp/axum/src",
+    "path": "tmp",
     "lang": "rust"
   },
   "target": {
