@@ -1,4 +1,4 @@
-// port-lint: source response/sse.rs
+// port-lint: source axum/src/response/sse.rs
 package io.github.kotlinmania.axum.response
 
 import kotlinx.coroutines.flow.Flow

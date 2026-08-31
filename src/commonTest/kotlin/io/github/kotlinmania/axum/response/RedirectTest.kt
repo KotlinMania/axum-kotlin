@@ -1,4 +1,4 @@
-// port-lint: tests response/redirect.rs
+// port-lint: tests axum/src/response/redirect.rs
 package io.github.kotlinmania.axum.response
 
 import kotlin.test.Test
