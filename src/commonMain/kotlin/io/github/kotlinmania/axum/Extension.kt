@@ -1,4 +1,4 @@
-// port-lint: source axum/src/extension.rs
+// port-lint: source extension.rs
 package io.github.kotlinmania.axum
 
 /**

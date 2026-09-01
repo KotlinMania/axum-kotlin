@@ -1,4 +1,4 @@
-// port-lint: tests axum/src/extension.rs
+// port-lint: tests extension.rs
 package io.github.kotlinmania.axum
 
 import kotlin.test.Test
