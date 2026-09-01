@@ -1,4 +1,4 @@
-// port-lint: source axum/src/routing/method_filter.rs
+// port-lint: source routing/method_filter.rs
 package io.github.kotlinmania.axum.routing
 
 /**
