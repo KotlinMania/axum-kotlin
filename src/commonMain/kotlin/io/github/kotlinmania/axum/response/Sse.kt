@@ -2,7 +2,6 @@
 package io.github.kotlinmania.axum.response
 
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.seconds
 

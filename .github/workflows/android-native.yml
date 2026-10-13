@@ -25,14 +25,13 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v6.3.0
 
-      # The four androidNative* targets cross-compile on any host. Kotlin/Native
-      # test binaries are built by the full target gate; this workflow provides
-      # explicit compile coverage for every Android Native target.
+      # The retained androidNative* targets (Arm64, X64) cross-compile on any
+      # host. Kotlin/Native test binaries are built by the full target gate;
+      # this workflow provides explicit compile coverage for every Android
+      # Native target. 32-bit Arm32/X86 were retired (§5.5.3, 2026-06-25).
       - name: Compile Android Native targets
         run: >
           ./gradlew
-          compileKotlinAndroidNativeArm32
           compileKotlinAndroidNativeArm64
-          compileKotlinAndroidNativeX86
           compileKotlinAndroidNativeX64
           --no-configuration-cache
